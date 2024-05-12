@@ -1,0 +1,14 @@
+.p-container-success {
+    font-size: 18px;
+    border: solid 0.5px green;
+    background-color: yellowgreen;
+    display: inline-block;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
