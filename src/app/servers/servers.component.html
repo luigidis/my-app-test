@@ -1,5 +1,38 @@
 <!-- I want to permit the user to add more servers -->
+<label>Server Name</label>
+<!-- <input  type="text"
+        class="form-control"
+        (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p> {{ serverName }}</p>
 <!-- Alla proprietà disabled dell'html button sto passando la mia variabile booleana -->
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!-- <p>{{ allowNewServer }}</p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+<!-- ng-tempalte componente o direttiva di spedizione che
+        si può usare come marker per angular per contrassegnare 
+        i luoghi del DOM -->
+<ng-template #noServer>
+        <p>No server was created</p>
+</ng-template>
+<!-- Posso utilizzare anche questa direttiva -->
+@if (serverCreated) {
+        <p>Server was created, server name is  {{ serverName }}</p>
+}
+@else {
+        <p>No server was created</p>
+}
+
 <app-server></app-server>
 <app-server></app-server>
+
+<!--
+1. Add a Inputfield wich updates a property ('username') via Two-Way-Binding
+2. Output the username property via String Interpolation (in a paragraph below the input)
+3. Add a button wich may only be clicked if the userna is Not an empty string
+4. Upon clicking the button, the username should be reset to an empty string -->
+
+<!-- <input type="text" [(ngModel)]="userName">
+<p> {{ userName }} </p>
+<button class="btn btn-primary" [disabled]="!userName" (click)="onResetUser()">Reset Name!</button> -->
