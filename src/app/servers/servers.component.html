@@ -16,7 +16,7 @@
 <ng-template #noServer>
         <p>No server was created</p>
 </ng-template>
-<!-- Posso utilizzare anche questa direttiva -->
+<!-- Posso utilizzare anche questa direttiva per versione Angular 17 o più -->
 @if (serverCreated) {
         <p>Server was created, server name is  {{ serverName }}</p>
 }
@@ -24,9 +24,11 @@
         <p>No server was created</p>
 }
 
-<app-server></app-server>
-<app-server></app-server>
-
+<app-server *ngFor="let server of servers"></app-server>
+<!-- Anche per il for posso utilizzare un direttiva differente per versione Angular 17 o più -->
+@for (server of servers; track $index) {
+        <app-server></app-server>
+}
 <!--
 1. Add a Inputfield wich updates a property ('username') via Two-Way-Binding
 2. Output the username property via String Interpolation (in a paragraph below the input)

@@ -7,6 +7,7 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { PraticingDirective } from './exercises/practicing-directives/practicing-directives.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
     ServerComponent,
     ServersComponent,
     WarningAlertComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    PraticingDirective,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

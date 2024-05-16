@@ -1,0 +1,17 @@
+<!-- 1. Add a button which says 'Display Details'
+2. Add a paragraph with any content of you choice (e.g. 'Secret password = 'tuna')
+3. Toggle the displaying of that paragraph with the bnutton created in the first step
+4. Log all button clicks in an array and output that array below the secret paragraph (maybe
+    log a timestamp or simply an incrementi number)
+5. Starting at the 5th log item, five all future log items a blue background (via ngStyle) and white color (ngCLass) -->
+<div class="container" (click)="onDisplayDetails()">
+    <button>Display Details</button>
+</div>
+<!-- @if (secretPassword) {
+    <div class="container">
+        <p>Secret password: {{ secretPassword }}</p>
+    </div>
+} -->
+<div class="container" *ngFor="let secretPassword of secretPasswords">
+    <p>Secret password: {{ secretPassword }}</p>
+</div>
